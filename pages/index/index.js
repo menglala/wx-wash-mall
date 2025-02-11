@@ -17,6 +17,7 @@ Page({
     loadingMoreHidden: true,
     coupons: [],
     curPage: 1,
+    banners: [], 
     pageSize: 20
   },
   tabClick(e) {
@@ -34,6 +35,11 @@ Page({
         url: '/pages/category/category',
       })
     }
+  },
+  onBuy(){
+    wx.navigateTo({
+      url: '/pages/category/category',
+    })
   },
   tabClickCms(e) {
     // 文章分类点击
@@ -189,21 +195,32 @@ Page({
     }
   },
   async initBanners(){
-    const _data = {}
-    // 读取头部轮播图
-    const res1 = await WXAPI.banners({
-      type: 'index'
+    // const _data = {}
+    // // 读取头部轮播图
+    // const res1 = await WXAPI.banners({
+    //   type: 'index'
+    // })
+    // if (res1.code == 700) {
+    //   wx.showModal({
+    //     title: '提示',
+    //     content: '请在后台添加 banner 轮播图片，自定义类型填写 index',
+    //     showCancel: false
+    //   })
+    // } else {
+    //   _data.banners = res1.data
+    // }
+    this.setData({
+      banners: [
+        {
+          id: 1,
+          picUrl: 'https://images.pexels.com/photos/135620/pexels-photo-135620.jpeg?auto=compress&cs=tinysrgb&w=1200'
+        },
+        {
+          id: 2,
+          picUrl: 'https://images.pexels.com/photos/325876/pexels-photo-325876.jpeg?auto=compress&cs=tinysrgb&w=1200'
+        },
+      ]
     })
-    if (res1.code == 700) {
-      wx.showModal({
-        title: '提示',
-        content: '请在后台添加 banner 轮播图片，自定义类型填写 index',
-        showCancel: false
-      })
-    } else {
-      _data.banners = res1.data
-    }
-    this.setData(_data)
   },
   onShow: function(e){
     this.setData({
@@ -314,12 +331,21 @@ Page({
   },
   getNotice: function() {
     var that = this;
-    WXAPI.noticeList({pageSize: 5}).then(function (res) {
-      if (res.code == 0) {
-        that.setData({
-          noticeList: res.data
-        });
-      }
+    // WXAPI.noticeList({pageSize: 5}).then(function (res) {
+    //   if (res.code == 0) {
+    //     that.setData({
+    //       noticeList: res.data
+    //     });
+    //   }
+    // })
+    this.setData({
+      noticeList: [
+        {
+          id: 1,
+          title: '【2021.01.01】活动通知',
+          addTime: '2021.01.01 00:00:00',
+          content: '活动通知活动通知活动通知活动通知活动通知活动通知活动通知活动通知活动通知活动通知活动通知活动通知活动通知活动通知活动通知活动通知活动通知活动通知活动通知活动通知活动通知活动通知活动通知活动通知活动通知'}
+      ]
     })
   },
   onReachBottom: function() {

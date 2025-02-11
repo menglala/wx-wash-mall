@@ -1,4 +1,7 @@
 {
   "enablePullDownRefresh": true,
-  "navigationStyle": "custom"
+  "navigationBarTitleText": "即时洗衣",
+  "usingComponents":{
+    "order-status" : "/components/order-status/index"
+  }
 }

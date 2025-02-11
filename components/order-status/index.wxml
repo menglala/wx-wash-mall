@@ -1,0 +1,26 @@
+<!-- order-status.wxml -->
+<view class="order-status">
+  <view class="status-title">订单动态</view>
+  
+  <view class="order-info">
+    <view class="order-info-item">
+      <text class="info-label">订单编号：</text>
+      <text class="info-value">{{orderId}}</text>
+    </view>
+    <view class="order-info-item">
+      <text class="info-label">创建时间：</text>
+      <text class="info-value">{{createTime}}</text>
+    </view>
+  </view>
+
+  <!-- 状态时间线 -->
+  <view class="status-timeline {{currentStep ? 'step-' + currentStep : ''}}">
+    <view wx:for="{{statusList}}" 
+          wx:key="index" 
+          class="status-item {{item.completed ? 'completed' : ''}}">
+      <image src="{{item.icon}}" class="status-icon"/>
+      <text class="status-text">{{item.name}}</text>
+      <text class="status-time">{{item.time}}</text>
+    </view>
+  </view>
+</view>

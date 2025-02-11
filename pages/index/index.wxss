@@ -120,9 +120,9 @@
 }
 
 .notice-icon {
-  width: 130rpx;
+  width: 40rpx;
   height: 33rpx;
-  margin-right: 10px;
+  margin-right: 10rpx;
 }
 
 .notice-box {
@@ -141,7 +141,7 @@
   padding-left: 16rpx;
   font-size: 24rpx;
   overflow: hidden;
-  color: #e64340;
+  color: #1296db;
 }
 
 .container {
@@ -193,22 +193,22 @@
 }
 
 .swiper-container {
-  width: 750rpx;
-  height: 375rpx;
-  position: relative;
-  z-index: 1;
+  margin: 20rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.08);
+  width: calc(100% - 40rpx);
 }
 
 .swiper-container .swiper1 {
-  width: 750rpx;
+  width: 100%;
   height: 375rpx;
 }
 
 .swiper-container .swiper1 image {
-  width: 750rpx;
-  height: 375rpx;
-  /* margin: 8rpx 15rpx; */
-  /* border-radius: 16rpx; */
+  width: 100%;
+  height: 100%;
+  border-radius: 16rpx;
 }
 
 ::-webkit-scrollbar {
@@ -218,8 +218,8 @@
 }
 
 .type-item-on {
-  color: #e64340;
-  border-bottom: 1rpx solid #e64340;
+  color: #1296db;
+  border-bottom: 1rpx solid #1296db;
 }
 
 .goods-container {
@@ -374,7 +374,7 @@
 
 .tuan-price .now {
   font-size: 36rpx;
-  color: #e64340;
+  color: #1296db;
 }
 
 .tuan-price .original {
@@ -481,7 +481,7 @@
 }
 
 .miaosha-goods-list .r .label {
-  color: #e64340;
+  color: #1296db;
   font-size: 24rpx;
   display: flex;
   align-items: flex-start;
@@ -526,7 +526,7 @@
 }
 
 .miaosha-price-btn .price {
-  color: #e64340;
+  color: #1296db;
   font-size: 40rpx;
   margin-top: 12rpx;
   font-weight: bold;
@@ -612,4 +612,67 @@
 }
 .pingtuantag {
   margin-left: 16rpx;
+}
+
+.service-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 40rpx;
+  background: #F5F5F5;
+  margin: 20rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+}
+
+.service-item .iconfont {
+  width: 80rpx;
+  height: 80rpx;
+  margin-bottom: 16rpx;
+  padding: 15rpx;
+  text-align: center;
+  font-size: 60rpx;
+  color: #1296db;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.service-item:active .iconfont {
+  transform: scale(0.95);
+  box-shadow: 0 2rpx 6rpx rgba(0,0,0,0.12);
+}
+
+.service-item text {
+  font-size: 26rpx;
+  color: #333;
+  font-weight: 500;
+}
+
+/* 一键下单按钮样式优化 */
+.order-button {
+  width: calc(100% - 40rpx) !important;
+  margin: 30rpx 20rpx !important;
+  height: 88rpx !important;
+  line-height: 88rpx !important;
+  font-size: 32rpx !important;
+  font-weight: 500 !important;
+  letter-spacing: 2rpx;
+  box-shadow: 0 6rpx 16rpx rgba(18, 150, 219, 0.2) !important;
+}
+
+/* 公告栏优化 */
+.notice-box {
+  margin: 20rpx;
+  border-radius: 12rpx;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.05);
 }

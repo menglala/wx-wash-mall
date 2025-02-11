@@ -1,4 +1,4 @@
-<van-sticky>
+<!-- <van-sticky>
 <view class="search-container">
   <view class="search" style="height:{{navHeight}}px;padding-top:{{navTop}}px">
     <view class="search-title" src="../../images/actLogo/ytlogo.png"
@@ -39,14 +39,14 @@ module.exports = {
     }
   }
 }
-</wxs>
+</wxs> -->
 <view class="swiper-container">
   <swiper class="swiper1" indicator-dots="true" indicator-active-color="#fff" autoplay circular>
     <swiper-item wx:for="{{banners}}" wx:key="id">
       <image mode="aspectFill" bindtap="tapBanner" data-item="{{ item }}" src="{{item.picUrl}}" />
     </swiper-item>
   </swiper>
-  <view wx:if="{{goodsDynamic && show_buy_dynamic == '1' }}" class="goodsDynamic">
+  <!-- <view wx:if="{{goodsDynamic && show_buy_dynamic == '1' }}" class="goodsDynamic">
     <swiper class="swiper2" autoplay circular vertical>
       <navigator wx:for="{{goodsDynamic}}" wx:key="index" url="{{ goodsDetailPage.url(item) }}">
         <swiper-item>
@@ -57,9 +57,9 @@ module.exports = {
         </swiper-item>
       </navigator>
     </swiper>
-  </view>
+  </view> -->
 </view>
-<view class="category-container">
+<!-- <view class="category-container">
   <view class="category-box">
     <view class="category-list" wx:for="{{categories}}" wx:key="id">
       <view class="category-column" bindtap="tabClick"
@@ -76,20 +76,44 @@ module.exports = {
       </view>
     </view>
   </view>
-</view>
+</view> -->
 <view class="notice-box" wx:if="{{noticeList}}">
   <swiper class="notice_swiper" vertical autoplay circular interval="8000">
-    <swiper-item wx:for="{{noticeList.dataList}}" wx:key="id">
+    <swiper-item wx:for="{{noticeList}}" wx:key="id">
       <van-notice-bar wx:if="{{noticeList}}" mode="link" text="{{ item.title }}" background="#FFFFFF"
         data-id="{{ item.id }}" speed="30" bind:click="goNotice">
-        <image slot="left-icon" class="notice-icon" src="../../images/home/notice.png"></image>
+        <image slot="left-icon" class="notice-icon" src="../../images/home/notice_icon.png"></image>
       </van-notice-bar>
     </swiper-item>
   </swiper>
 </view>
-<view class="container">
+
+<van-button type="primary" color="#1296db" block round open-type="getPhoneNumber" bind:click="onBuy" custom-class="order-button">一键下单</van-button>
+
+<order-status></order-status>
+
+<view class="service-container">
+  <view class="service-item" bindtap="goService">
+    <!-- 使用字体图标替代图片 -->
+    <text class="iconfont icon-guanyu" /> 
+    <text>服务介绍</text>
+  </view>
+  <view class="service-item" bindtap="goShop">
+    <text class="iconfont icon-dizhi" /> 
+    <text>附近门店</text>
+  </view>
+  <view class="service-item" bindtap="goHowToOrder">
+    <text class="iconfont icon-bangzhu" /> 
+    <text>如何下单</text>
+  </view>
+  <view class="service-item">
+    <text class="iconfont icon-lishi" /> 
+    <text>敬请期待</text>
+  </view>
+</view>
+
+<!-- <view class="container">
   <image wx:if="{{ adPositionIndexLivePic }}" class="live-banner" src="{{ adPositionIndexLivePic.val }}" mode="widthFix" bindtap="clickAdPositionIndexLive"></image>
-  <!-- 秒杀开始 -->
   <block wx:if="{{miaoshaGoods && miaoshaGoods.length > 0}}">
     <van-divider custom-class="table-text" contentPosition="center">
       <image class="table-icon-miaosha" src="../../images/home/miaosha.png"></image> 限时秒杀
@@ -122,7 +146,6 @@ module.exports = {
       </view>
     </view>
   </block>
-  <!-- 秒杀结束 -->
 
   <view class="space"></view>
   <van-divider custom-class="table-text" wx:if="{{goodsRecommend.length > 0}}"
@@ -203,10 +226,10 @@ module.exports = {
     </view>
   </view>
   <van-divider wx:if="{{ !loadingMoreHidden }}" contentPosition="center">没有更多啦</van-divider>
-</view>
-<view class='coupons-float' bindtap="goCoupons">
+</view> -->
+<!-- <view class='coupons-float' bindtap="goCoupons">
   <image src="/images/gift.png"></image>
-</view>
+</view> -->
 
 <van-overlay show="{{ adPositionIndexPop }}">
   <view class="adPositionIndexPop">
