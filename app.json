@@ -129,22 +129,16 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/category/category",
-        "iconPath": "images/nav/fl-off.png",
-        "selectedIconPath": "images/nav/fl-on.png",
-        "text": "分类"
+        "pagePath": "pages/shop-cart/index",
+        "iconPath": "images/nav/cart-off.png",
+        "selectedIconPath": "images/nav/cart-on.png",
+        "text": "购物车"
       },
       {
         "pagePath": "pages/coupons/index",
         "iconPath": "images/nav/coupon-off.png",
         "selectedIconPath": "images/nav/coupon-on.png",
-        "text": "优惠券"
-      },
-      {
-        "pagePath": "pages/shop-cart/index",
-        "iconPath": "images/nav/cart-off.png",
-        "selectedIconPath": "images/nav/cart-on.png",
-        "text": "购物车"
+        "text": "订单"
       },
       {
         "pagePath": "pages/my/index",
