@@ -72,6 +72,14 @@
   ],
   "subpackages": [
     {
+      "root": "subPackages",
+      "name": "subPackages",
+      "pages": [
+        "pages/serviceGuide/index",
+        "pages/orderGuide/index"
+      ]
+    },
+    {
       "root": "packageStreamMedia",
       "name": "packageStreamMedia",
       "pages": [

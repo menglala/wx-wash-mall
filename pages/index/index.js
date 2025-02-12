@@ -419,6 +419,11 @@ Page({
     })
   },
   async adPosition() {
+    this.setData({
+      adPositionIndexLivePic: 'https://www.bing.com/images/search?view=detailV2&ccid=VZwzf5S0&id=AA93E7F13A8CACCDABE1FED654CF30C8EC573201&thid=OIP.VZwzf5S0nLiM8gp6XIeP6AHaFK&mediaurl=https%3a%2f%2fpic.616pic.com%2fys_bnew_img%2f00%2f06%2f10%2fO9WoQCYn6g.jpg&exph=557&expw=800&q=%e5%b9%b8%e8%bf%90%e6%8a%bd%e5%a5%96&simid=608032546794778856&FORM=IRPRST&ck=15A65AD9C61E1CD94A05C43781833680&selectedIndex=2&itb=0',
+      adPositionIndexPop: {val:'https://images.pexels.com/photos/1111597/pexels-photo-1111597.jpeg?auto=compress&cs=tinysrgb&w=1200'}
+    })
+    return
     let res = await WXAPI.adPosition('indexPop')
     if (res.code == 0) {
       this.setData({
@@ -473,6 +478,24 @@ Page({
       })
       this.setData({
         cmsCategories
+      })
+    }
+  },
+  onGoPage(e) {
+    const page = e.currentTarget.dataset.page
+    console.log('点击跳转:', page)
+    const pageMap = {
+      'serviceGuide': '/subPackages/pages/serviceGuide/index',
+      'orderGuide': '/subPackages/pages/orderGuide/index'
+    }
+    
+    if (pageMap[page]) {
+      console.log('跳转到:', pageMap[page])
+      wx.navigateTo({
+        url: pageMap[page],
+        fail(err) {
+          console.error('跳转失败:', err)
+        }
       })
     }
   },

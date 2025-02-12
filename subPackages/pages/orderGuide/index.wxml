@@ -1,0 +1,79 @@
+<view class="container">
+  <!-- 顶部banner -->
+  <view class="banner">
+    <image src="/images/laundry-banner.png" mode="aspectFill"/>
+  </view>
+
+  <!-- 服务优势 -->
+  <view class="section">
+    <view class="section-title">
+      <image class="icon" src="/images/advantage.png"/>
+      <text>服务优势</text>
+    </view>
+    <view class="advantage-list">
+      <view class="advantage-item">
+        <text class="title">自选方式</text>
+        <text class="desc">线上下单门店自取和配送,24小时贴心服务,轻松一键搞定!</text>
+      </view>
+      <view class="advantage-item">
+        <text class="title">线上预约</text>
+        <text class="desc">线上预约时间灵活,快速上门取件,省时又省力!</text>
+      </view>
+      <view class="advantage-item">
+        <text class="title">特快时效</text>
+        <text class="desc">24小时内专业清洗完成,不用等待,干净衣物送到家!</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 洗衣流程 -->
+  <view class="section">
+    <view class="section-title">
+      <image class="icon" src="/images/process.png"/>
+      <text>洗衣流程</text>
+    </view>
+    <view class="process-list">
+      <image class="process-img" src="/images/laundry-process.png" mode="widthFix"/>
+      <view class="process-steps">
+        <view class="step">
+          <text>下单预约</text>
+        </view>
+        <view class="step">
+          <text>上门取件</text>
+        </view>
+        <view class="step">
+          <text>专业清洗</text>
+        </view>
+        <view class="step">
+          <text>品质检验</text>
+        </view>
+        <view class="step">
+          <text>送回上门</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 洗衣品质 -->
+  <view class="section">
+    <view class="section-title">
+      <image class="icon" src="/images/quality.png"/>
+      <text>洗衣品质</text>
+    </view>
+    <view class="quality-list">
+      <view class="quality-item">
+        <text class="tag">严格把控</text>
+        <text class="desc">品质洗衣</text>
+      </view>
+      <view class="quality-item">
+        <text class="tag">衣物养护</text>
+        <text class="desc">专业呵护每一件衣物,确保品质如新</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部slogan -->
+  <view class="footer">
+    <text>美妙生活 轻松开始</text>
+  </view>
+</view>

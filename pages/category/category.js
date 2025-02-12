@@ -17,6 +17,66 @@ Page({
     onLoadStatus: true,
     scrolltop: 0,
 
+    // 添加静态测试数据
+    testCategories: [
+      {
+        id: 1,
+        name: '手机数码',
+        level: 1,
+        pid: 0,
+        childs: [
+          {
+            id: 11,
+            name: '手机',
+            level: 2,
+            pid: 1
+          },
+          {
+            id: 12,
+            name: '平板',
+            level: 2,
+            pid: 1
+          }
+        ]
+      },
+      {
+        id: 2,
+        name: '电脑办公', 
+        level: 1,
+        pid: 0,
+        childs: [
+          {
+            id: 21,
+            name: '笔记本',
+            level: 2,
+            pid: 2
+          },
+          {
+            id: 22,
+            name: '台式机',
+            level: 2,
+            pid: 2
+          }
+        ]
+      }
+    ],
+    testGoods: [
+      {
+        id: 1,
+        name: '测试商品1',
+        pic: 'https://dummyimage.com/200x200/000/fff',
+        minPrice: 999,
+        numberSells: 100
+      },
+      {
+        id: 2,
+        name: '测试商品2', 
+        pic: 'https://dummyimage.com/200x200/000/fff',
+        minPrice: 888,
+        numberSells: 50
+      }
+    ],
+
     skuCurGoods: undefined,
     page: 1,
     pageSize: 20
@@ -37,21 +97,17 @@ Page({
     wx.showLoading({
       title: '',
     })
-    const res = await WXAPI.goodsCategory()
+    
+    // 使用测试数据
+    // const res = await WXAPI.goodsCategory()
+    const categories = this.data.testCategories // 使用测试数据
+    
     wx.hideLoading()
     let activeCategory = 0
     let categorySelected = this.data.categorySelected
-    if (res.code == 0) {
-      // const categories = res.data.filter(ele => {
-      //   return !ele.vopCid1 && !ele.vopCid2
-      // })
-      const categories = res.data
-      categories.forEach(p => {
-        p.childs = categories.filter(ele => {
-          return p.id == ele.pid
-        })
-      })
-      const firstCategories = categories.filter(ele => { return ele.level == 1 })
+
+    // if (res.code == 0) {
+      const firstCategories = categories
       if (this.data.categorySelected.id) {
         activeCategory = firstCategories.findIndex(ele => {
           return ele.id == this.data.categorySelected.id
@@ -61,12 +117,12 @@ Page({
         categorySelected = firstCategories[0]
       }
       let adPosition = null
-      if (categorySelected) {
-        const resAd = await WXAPI.adPosition('category_' + categorySelected.id)
-        if (resAd.code === 0) {
-          adPosition = resAd.data
-        }
-      }
+      // if (categorySelected) {
+      //   const resAd = await WXAPI.adPosition('category_' + categorySelected.id)
+      //   if (resAd.code === 0) {
+      //     adPosition = resAd.data
+      //   }
+      // }
       this.setData({
         page: 1,
         activeCategory,
@@ -76,7 +132,7 @@ Page({
         adPosition
       })
       this.getGoodsList()
-    }
+    // }
   },
   async getGoodsList() {
     if (this.data.categoryMod == 2) {
@@ -85,47 +141,45 @@ Page({
     wx.showLoading({
       title: '',
     })
-    // secondCategoryId
-    let categoryId = ''
-    if (this.data.secondCategoryId) {
-      categoryId = this.data.secondCategoryId
-    } else if(this.data.categorySelected && this.data.categorySelected.id) {
-      categoryId = this.data.categorySelected.id
-    }
-    // https://www.yuque.com/apifm/nu0f75/wg5t98
-    const res = await WXAPI.goodsv2({
-      categoryId,
-      page: this.data.page,
-      pageSize: this.data.pageSize
-    })
+    
+    // 使用测试数据
+    // const res = await WXAPI.goodsv2({
+    //   categoryId,
+    //   page: this.data.page,
+    //   pageSize: this.data.pageSize
+    // })
+    
+    const testGoods = this.data.testGoods
     wx.hideLoading()
-    if (res.code == 700) {
-      if (this.data.page == 1) {
-        this.setData({
-          currentGoods: null
-        });
-      } else {
-        wx.showToast({
-          title: '没有更多了',
-          icon: 'none'
-        })
-      }
-      return
-    }
-    if (res.code != 0) {
-      wx.showToast({
-        title: res.msg,
-        icon: 'none'
-      })
-      return
-    }
+    
+    // if (res.code == 700) {
+    //   if (this.data.page == 1) {
+    //     this.setData({
+    //       currentGoods: null
+    //     });
+    //   } else {
+    //     wx.showToast({
+    //       title: '没有更多了',
+    //       icon: 'none'
+    //     })
+    //   }
+    //   return
+    // }
+    // if (res.code != 0) {
+    //   wx.showToast({
+    //     title: res.msg,
+    //     icon: 'none'
+    //   })
+    //   return
+    // }
+    
     if (this.data.page == 1) {
       this.setData({
-        currentGoods: res.data.result
+        currentGoods: testGoods
       })
     } else {
       this.setData({
-        currentGoods: this.data.currentGoods.concat(res.data.result)
+        currentGoods: this.data.currentGoods.concat(testGoods)
       })
     }
   },

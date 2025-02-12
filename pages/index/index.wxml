@@ -88,26 +88,27 @@ module.exports = {
   </swiper>
 </view>
 
-<van-button type="primary" color="#1296db" block round open-type="getPhoneNumber" bind:click="onBuy" custom-class="order-button">一键下单</van-button>
+<van-button type="primary" color="#1296db" block round open-type="getPhoneNumber" bind:click="onBuy"
+  custom-class="order-button">一键下单</van-button>
 
 <order-status></order-status>
 
 <view class="service-container">
-  <view class="service-item" bindtap="goService">
+  <view class="service-item" data-page="serviceGuide" bindtap="onGoPage">
     <!-- 使用字体图标替代图片 -->
-    <text class="iconfont icon-guanyu" /> 
+    <text class="iconfont icon-guanyu" />
     <text>服务介绍</text>
   </view>
   <view class="service-item" bindtap="goShop">
-    <text class="iconfont icon-dizhi" /> 
+    <text class="iconfont icon-dizhi" />
     <text>附近门店</text>
   </view>
-  <view class="service-item" bindtap="goHowToOrder">
-    <text class="iconfont icon-bangzhu" /> 
+  <view class="service-item" data-page="orderGuide" bindtap="onGoPage">
+    <text class="iconfont icon-bangzhu" />
     <text>如何下单</text>
   </view>
   <view class="service-item">
-    <text class="iconfont icon-lishi" /> 
+    <text class="iconfont icon-lishi" />
     <text>敬请期待</text>
   </view>
 </view>

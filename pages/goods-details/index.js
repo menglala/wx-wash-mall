@@ -21,6 +21,45 @@ Page({
     propertyChildNames: "",
     canSubmit: false, //  选中规格尺寸时候是否允许加入购物车
     shopType: "addShopCar", //购物类型，加入购物车或立即购买，默认为加入购物车
+    // 添加测试数据
+    testGoodsDetail: {
+      basicInfo: {
+        id: 1,
+        name: '测试商品1',
+        pic: 'https://dummyimage.com/200x200/000/fff',
+        minPrice: 999,
+        originalPrice: 1299,
+        numberSells: 100,
+        stores: 999,
+        numberGoodReputation: 50,
+        numberReputation: 60,
+        characteristic: '商品特色描述',
+        description: '商品详细描述',
+        content: '<p>商品详情内容</p><img src="https://dummyimage.com/600x400/000/fff"/>',
+      },
+      pics: [
+        { pic: 'https://dummyimage.com/200x200/000/fff' },
+        { pic: 'https://dummyimage.com/200x200/000/fff' }
+      ],
+      properties: [
+        {
+          id: 1,
+          name: '颜色',
+          childsCurGoods: [
+            { id: 11, name: '黑色', active: false },
+            { id: 12, name: '白色', active: false }
+          ]
+        },
+        {
+          id: 2,
+          name: '容量',
+          childsCurGoods: [
+            { id: 21, name: '128G', active: false },
+            { id: 22, name: '256G', active: false }
+          ]
+        }
+      ]
+    }
   },
   bindscroll(e) {
     if (this.data.tabclicked) {
@@ -211,6 +250,59 @@ Page({
     })
   },
   async getGoodsDetailAndKanjieInfo(goodsId) {
+    // 直接使用测试数据并返回
+    const testGoodsDetail = {
+      basicInfo: {
+        id: 1,
+        name: '测试商品1',
+        pic: 'https://dummyimage.com/200x200/000/fff',
+        minPrice: 999,
+        originalPrice: 1299,
+        numberSells: 100,
+        stores: 999,
+        numberGoodReputation: 50,
+        numberReputation: 60,
+        characteristic: '商品特色描述',
+        description: '商品详细描述',
+        content: '<p>商品详情内容</p><img src="https://dummyimage.com/600x400/000/fff"/>',
+      },
+      pics: [
+        { pic: 'https://dummyimage.com/200x200/000/fff' },
+        { pic: 'https://dummyimage.com/200x200/000/fff' }
+      ],
+      properties: [
+        {
+          id: 1,
+          name: '颜色',
+          childsCurGoods: [
+            { id: 11, name: '黑色', active: false },
+            { id: 12, name: '白色', active: false }
+          ]
+        },
+        {
+          id: 2,
+          name: '容量',
+          childsCurGoods: [
+            { id: 21, name: '128G', active: false },
+            { id: 22, name: '256G', active: false }
+          ]
+        }
+      ]
+    }
+
+    // 设置测试数据并返回
+    this.setData({
+      goodsDetail: testGoodsDetail,
+      selectSizePrice: testGoodsDetail.basicInfo.minPrice,
+      selectSizeOPrice: testGoodsDetail.basicInfo.originalPrice,
+      totalScoreToPay: testGoodsDetail.basicInfo.minScore,
+      buyNumMax: testGoodsDetail.basicInfo.stores,
+      buyNumber: (testGoodsDetail.basicInfo.stores > 0) ? 1 : 0,
+      hasMoreSelect: testGoodsDetail.properties ? true : false
+    })
+    return
+
+    // 以下是原有代码，由于上面 return 不会执行到这里
     const token = wx.getStorageSync('token')
     const that = this;
     const goodsDetailRes = await WXAPI.goodsDetail(goodsId, token ? token : '')
@@ -780,7 +872,26 @@ Page({
       imageUrl: this.data.goodsDetail.basicInfo.pic
     }
   },
-  reputation: function (goodsId) {
+  reputation: function(goodsId) {
+    // 直接使用测试数据并返回
+    this.setData({
+      reputation: {
+        result: [{
+          user: {
+            nick: '测试用户1',
+            avatarUrl: 'https://dummyimage.com/100x100/000/fff'
+          },
+          goods: {
+            goodReputation: 5,
+            dateReputation: '2024-03-20',
+            goodReputationRemark: '商品很好,很满意!'
+          }
+        }]
+      }
+    })
+    return
+
+    // 以下是原有代码，由于上面 return 不会执行到这里
     var that = this;
     WXAPI.goodsReputationV2({
       goodsId: goodsId

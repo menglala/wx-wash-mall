@@ -1,0 +1,124 @@
+.container {
+  padding: 0 0 40rpx;
+  background: #f7f7f7;
+}
+
+.banner {
+  width: 100%;
+  height: 300rpx;
+}
+
+.banner image {
+  width: 100%;
+  height: 100%;
+}
+
+.section {
+  margin: 30rpx 20rpx;
+  padding: 30rpx;
+  background: #fff;
+  border-radius: 16rpx;
+	width: 90%;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.section-title .icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 16rpx;
+}
+
+.section-title text {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #333;
+}
+
+.advantage-list .advantage-item {
+  margin-bottom: 24rpx;
+  padding: 20rpx;
+  background: #f8f8f8;
+  border-radius: 12rpx;
+}
+
+.advantage-item .title {
+  display: block;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.advantage-item .desc {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.5;
+}
+
+.process-list {
+  position: relative;
+}
+
+.process-img {
+  width: 100%;
+  height: auto;
+}
+
+.process-steps {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20rpx;
+}
+
+.process-steps .step {
+  text-align: center;
+}
+
+.step text {
+  font-size: 26rpx;
+  color: #666;
+}
+
+.quality-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.quality-item {
+  padding: 20rpx;
+  background: #f8f8f8;
+  border-radius: 12rpx;
+}
+
+.quality-item .tag {
+  display: inline-block;
+  padding: 4rpx 16rpx;
+  background: #1296db;
+  color: #fff;
+  font-size: 24rpx;
+  border-radius: 8rpx;
+  margin-bottom: 12rpx;
+}
+
+.quality-item .desc {
+  display: block;
+  font-size: 26rpx;
+  color: #666;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 40rpx;
+}
+
+.footer text {
+  font-size: 28rpx;
+  color: #999;
+}
