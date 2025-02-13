@@ -58,6 +58,36 @@ Page({
             { id: 22, name: '256G', active: false }
           ]
         }
+      ],
+      skuList: [
+        {
+          id: 1,
+          propertyChildIds: "1:11,2:21", // 黑色-128G
+          price: 999,
+          originalPrice: 1299,
+          stores: 100
+        },
+        {
+          id: 2, 
+          propertyChildIds: "1:11,2:22", // 黑色-256G
+          price: 1299,
+          originalPrice: 1599,
+          stores: 100
+        },
+        {
+          id: 3,
+          propertyChildIds: "1:12,2:21", // 白色-128G 
+          price: 999,
+          originalPrice: 1299,
+          stores: 100
+        },
+        {
+          id: 4,
+          propertyChildIds: "1:12,2:22", // 白色-256G
+          price: 1299,
+          originalPrice: 1599,
+          stores: 100
+        }
       ]
     }
   },
@@ -287,6 +317,36 @@ Page({
             { id: 22, name: '256G', active: false }
           ]
         }
+      ],
+      skuList: [
+        {
+          id: 1,
+          propertyChildIds: "1:11,2:21", // 黑色-128G
+          price: 999,
+          originalPrice: 1299,
+          stores: 100
+        },
+        {
+          id: 2, 
+          propertyChildIds: "1:11,2:22", // 黑色-256G
+          price: 1299,
+          originalPrice: 1599,
+          stores: 100
+        },
+        {
+          id: 3,
+          propertyChildIds: "1:12,2:21", // 白色-128G 
+          price: 999,
+          originalPrice: 1299,
+          stores: 100
+        },
+        {
+          id: 4,
+          propertyChildIds: "1:12,2:22", // 白色-256G
+          price: 1299,
+          originalPrice: 1599,
+          stores: 100
+        }
       ]
     }
 
@@ -487,7 +547,9 @@ Page({
     let curSelectNum = 0;
     let propertyChildIds = "";
     let propertyChildNames = "";
-    let _skuList = this.data.goodsDetail.skuList
+
+    // 确保 skuList 存在再进行过滤
+    let _skuList = this.data.goodsDetail.skuList || []
 
     this.data.goodsDetail.properties.forEach(p => {
       p.childsCurGoods.forEach(c => {
@@ -611,6 +673,10 @@ Page({
    * 加入购物车
    */
   async addShopCar() {
+    wx.reLaunch({
+      url: "/pages/shop-cart/index"
+    });
+    return
     if (this.data.goodsDetail.properties && !this.data.canSubmit) {
       if (!this.data.canSubmit) {
         wx.showToast({

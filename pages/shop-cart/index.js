@@ -36,13 +36,66 @@ Page({
     this.initEleWidth();
     this.onShow();
     this.setData({
-      shopping_cart_vop_open: wx.getStorageSync('shopping_cart_vop_open')
+      // shopping_cart_vop_open: wx.getStorageSync('shopping_cart_vop_open')
+      shopping_cart_vop_open: 0
     })
   },
   onShow: function () {
     this.shippingCarInfo()
   },
   async shippingCarInfo() {
+    // 添加静态测试数据
+    const mockData = {
+      code: 0,
+      data: {
+        items: [
+          {
+            goodsId: 123456,
+            name: "测试商品1",
+            price: 99.99,
+            number: 2,
+            pic: "https://dummyimage.com/200x200/000/fff",
+            selected: true,
+            stores: true,
+            status: 0,
+            key: "test_key_1",
+            left: "margin-left:0px",
+            shopId: 1,
+            active: false
+          },
+          {
+            goodsId: 789012,
+            name: "测试商品2",
+            price: 199.99,
+            number: 1,
+            pic: "https://dummyimage.com/200x200/000/fff",
+            selected: true,
+            stores: true,
+            status: 0,
+            key: "test_key_2",
+            left: "margin-left:0px",
+            shopId: 1,
+            active: false
+          }
+        ],
+        shopList: [{
+          id: 1,
+          name: "测试店铺"
+        }],
+        price: 299.98,
+        score: 0
+      }
+    };
+
+    this.setData({
+      shippingCarInfo: mockData.data,
+      saveHidden: true,
+      allSelect: true,
+      noSelect: false
+    });
+    console.log('购物车数据:', this.data.shippingCarInfo);
+    return;
+
     const token = wx.getStorageSync('token')
     if (!token) {
       return

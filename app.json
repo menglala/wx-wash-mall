@@ -17,6 +17,7 @@
     "pages/goods-details/times02",
     "pages/shop-cart/index",
     "pages/to-pay-order/index",
+    "pages/confirm-order/index",
     "pages/select-address/index",
     "pages/address-add/index",
     "pages/order-list/index",

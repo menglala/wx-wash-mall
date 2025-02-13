@@ -276,6 +276,10 @@ Component({
       });
     },
     async addCarSku(){
+      wx.reLaunch({
+        url: "/pages/shop-cart/index"
+      });
+      return
       await this.calculateGoodsPrice()
       // 加入购物车
       if (!this.data.canSubmit) {

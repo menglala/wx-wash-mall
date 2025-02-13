@@ -1,0 +1,388 @@
+page,view,image,input,textarea {
+  display: block;
+  box-sizing: border-box;
+}
+
+page {
+  background-color: #f2f2f2;
+  padding-bottom: 48rpx;
+}
+
+.address-box {
+  width: 100vw;
+  margin: 20rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+
+.add-address {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  padding-left: 32rpx;
+}
+.add-address image {
+  width: 40rpx;
+  height: 40rpx;
+}
+.add-address view {
+  margin-left: 16rpx;
+  font-size: 28rpx;
+  color: #000;
+  padding: 40rpx 0;
+}
+
+.show-address {
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 0 32rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.show-address .name-tel {
+  font-size: 28rpx;
+  color: #000;
+  padding: 30rpx 0 20rpx 0;
+}
+
+.show-address .addr-text {
+  font-size: 24rpx;
+  color: #888;
+  padding-bottom: 34rpx;
+  line-height: 36rpx;
+}
+.show-address .next {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+form {
+  width: 100%;
+}
+
+.goods-list {
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.goods-list .list-title {
+  font-size: 28rpx;
+  color: #000;
+  padding: 30rpx 0 25rpx 30rpx;
+}
+
+.goods-list  .a-goods {
+  width: 720rpx;
+  margin-left: 30rpx;
+  display: flex;
+  /*justify-content: space-between;*/
+  border-top: 1px solid #eee;
+  padding: 30rpx 30rpx 30rpx 0;
+}
+
+.goods-list  .a-goods .img-box {
+  width: 160rpx;
+  height: 160rpx;
+  overflow: hidden;
+  margin-right: 20rpx;
+  background-color: #d8d8d8;
+}
+
+.goods-list .img-box .img {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.goods-list  .a-goods .text-box {
+  width: 510rpx;
+  box-sizing: border-box;
+  padding-top: 10rpx;
+}
+
+.a-goods .text-box .arow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.a-goods .text-box .arow .goods-name {
+  width: 360rpx;
+  font-size: 26rpx;
+  height: 74rpx;
+  color: #000;
+  line-height: 1.6;
+  overflow: hidden;
+}
+
+.a-goods .text-box .arow01 {
+  margin-bottom: 30rpx;
+}
+
+.a-goods .text-box .arow .goods-price {
+  font-size: 26rpx;
+  color: #000;
+  align-self: flex-start;
+}
+
+.a-goods .text-box .arow .goods-label {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.a-goods .text-box .arow .goods-num {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.peisong-way {
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.peisong-way .row-box {
+  width: 720rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 24rpx 0 24rpx 30rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.peisong-way .row-label.t {
+  color: #333;
+}
+.peisong-way .row-label {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.peisong-way .right-text {
+  font-size: 28rpx;
+  color: #666;
+  padding-right: 30rpx;
+}
+
+.peisong-way .liuyan {
+  width: 510rpx;
+  font-size: 28rpx;
+}
+
+.goods-info {
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 120rpx;
+  padding-bottom: 24rpx;
+}
+
+.goods-info .row-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 24rpx 30rpx 12rpx 30rpx;
+  font-size: 28rpx;
+  color: #000;
+}
+
+.goods-info .row-box .right-text {
+  text-align: right;
+}
+.row-box .next {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.jiesuan-box {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  bottom: calc(env(safe-area-inset-bottom) / 2);
+  left: 0;
+  border-top: 1px solid #eee;
+  background-color: #fff;
+  z-index: 999;
+}
+
+.jiesuan-box .to-pay-btn {
+  width: 250rpx;
+  text-align: center;
+  height: 100%;
+  line-height: 100rpx;
+  background-color: #e64340;
+  font-size: 32rpx;
+  color: #fff;
+  border-radius: 0;
+}
+
+.jiesuan-box  .left-price {
+  display: flex;
+  width: 500rpx;
+  justify-content: flex-end;
+  line-height: 100rpx;
+  padding: 0 30rpx 0 0;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+
+.jiesuan-box .total {
+  color: #e64340;
+  text-align: right;
+}
+
+.box-v2 {
+  width: 100vw;
+}
+.bottom-box {
+  height: 120rpx;
+}
+.cell-group {
+  margin-top: 16rpx;
+}
+
+
+.login-box .logo {
+  width: 200rpx;
+  margin: 64rpx 275rpx;
+}
+.login-box .line {
+  height: 2rpx;
+  width: 686rpx;
+  background-color: #ebedf0;
+  margin: 0 32rpx;
+}
+.login-box .title {
+  margin: 64rpx 0 0 32rpx;
+  color: #333;
+  font-size: 36rpx;
+}
+.login-box .profile {
+  margin: 32rpx 0 0 32rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+.login-box .btn {
+  margin: 88rpx 32rpx;
+}
+
+/* 时间选择器样式 */
+.time-picker {
+  background: #fff;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.time-picker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx;
+  font-size: 32rpx;
+  color: #333;
+  border-bottom: 1rpx solid #eee;
+}
+
+.header-close {
+  font-size: 40rpx;
+  color: #999;
+  padding: 0 20rpx;
+}
+
+.time-picker-content {
+  display: flex;
+  height: 600rpx;
+}
+
+/* 左侧日期列表样式 */
+.days-column {
+  width: 200rpx;
+  background: #f7f8fa;
+  border-right: 1rpx solid #eee;
+}
+
+.day-item {
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.day-item.selected {
+  background: #fff;
+  color: #333;
+  font-weight: normal;
+  position: relative;
+}
+
+/* 右侧时间段列表样式 */
+.time-slots-column {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.time-slot {
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #333;
+  position: relative;
+}
+
+.time-slot.selected {
+  color: #ee0a24;
+}
+
+.time-slot.selected::after {
+  content: '';
+  position: absolute;
+  right: 40rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32rpx;
+  height: 32rpx;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ee0a24'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z'/%3E%3C/svg%3E") no-repeat;
+  background-size: contain;
+}
+
+/* 修改弹出层样式 */
+.van-popup {
+  border-radius: 16rpx 16rpx 0 0;
+  overflow: hidden;
+}
+
+/* 添加预计送回时间相关样式 */
+.delivery-time-section {
+  padding: 20rpx 30rpx;
+  background: #fff;
+}
+
+.icon-text-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.time-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 12rpx;
+}
+
+.time-input {
+  background: #f7f8fa;
+  border-radius: 8rpx;
+  padding: 20rpx;
+}
+
+.gray-input {
+  width: 100%;
+  color: #999;
+  font-size: 28rpx;
+}

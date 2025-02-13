@@ -94,7 +94,8 @@
       <view wx:else class="total">合计：¥ {{price}}</view>
     </view>
     <view class="to-pay-btn">
-      <navigator url="/pages/to-pay-order/index?shopCarType={{shopCarType}}">去结算</navigator>
+      <!-- <navigator url="/pages/to-pay-order/index?shopCarType={{shopCarType}}">去结算</navigator> -->
+      <navigator url="/pages/confirm-order/index?shopCarType={{shopCarType}}">去结算</navigator>
     </view>
   </view>
 </template>
